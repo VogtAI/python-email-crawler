@@ -93,18 +93,18 @@ def retrieve_html(url):
 	try:
 		logger.info("Crawling %s" % url)
 		request = urllib2.urlopen(req)
-	except urllib2.URLError, e:
+	except urllib2.URLError as e:
 		logger.error("Exception at url: %s\n%s" % (url, e))
-	except urllib2.HTTPError, e:
+	except urllib2.HTTPError as e:
 		status = e.code
-	except Exception, e:
+	except Exception as e:
 		return
 	if status == 0:
 		status = 200
 
 	try:
 		data = request.read()
-	except Exception, e:
+	except Exception as e:
 		return
 
 	return str(data)
@@ -214,6 +214,6 @@ if __name__ == "__main__":
 	except KeyboardInterrupt:
 		logger.error("Stopping (KeyboardInterrupt)")
 		sys.exit()
-	except Exception, e:
+	except Exception as e:
 		logger.error("EXCEPTION: %s " % e)
 		traceback.print_exc()
