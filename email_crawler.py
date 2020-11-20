@@ -1,9 +1,11 @@
 from settings import LOGGING
 import logging, logging.config
 import urllib
-import re, urlparse
+import re
 import traceback
 from database import CrawlerDb
+from urllib.parse import urlparse
+
 
 
 try:
