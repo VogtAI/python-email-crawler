@@ -107,7 +107,7 @@ class CrawlerDb:
 		for result in results:
 			if (result.url == None):
 				continue
-			url = urlparse.urlparse(result.url)
+			url = urlparse(result.url)
 			hostname = url.hostname.split(".")
 			# Simplistic assumeption of a domain. If 2nd last name is <4 char, then it has 3 parts eg. just2us.com.sg
 			hostname = ".".join(len(hostname[-2]) < 4 and hostname[-3:] or hostname[-2:])
