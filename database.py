@@ -138,7 +138,7 @@ class CrawlerDb:
 		c.crawled(website)
 		website = c.dequeue()
 		c.crawled(website, "a,b")
-		print '---'
+		#print '---'
 		c.dequeue()
 	
 	
