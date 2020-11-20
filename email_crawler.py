@@ -173,7 +173,7 @@ def find_links_in_html_with_same_hostname(url, html):
 				continue
 			else:
 				link_set.add(urlparse.urljoin(url.geturl(),link))
-		except Exception, e:
+		except Exception as e:
 			pass
 
 	return link_set
