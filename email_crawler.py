@@ -58,7 +58,7 @@ def crawl(keywords):
 			Store the HTML
 	"""
 	logger.info("-"*40)
-	logger.info("Keywords to Google for: %s" % keywords.decode('utf-8'))
+	logger.info("Keywords to Google for: %s" % keywords)
 	logger.info("-"*40)
 
 	# Step 1: Crawl Google Page
