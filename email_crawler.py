@@ -71,9 +71,9 @@ def crawl(keywords):
 		data = retrieve_html(url)
 		# 	print("data: \n%s" % data)
 		for url in google_url_regex.findall(data):
-			db.enqueue(unicode(url))
+			db.enqueue(str(url))
 		for url in google_adurl_regex.findall(data):
-			db.enqueue(unicode(url))
+			db.enqueue(str(url))
 
 	# Step 2: Crawl each of the search result
 	# We search till level 2 deep
