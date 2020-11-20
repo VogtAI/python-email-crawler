@@ -4,7 +4,7 @@ import urllib
 import re
 import traceback
 from database import CrawlerDb
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urljoin
 
 
 
@@ -164,7 +164,7 @@ def find_links_in_html_with_same_hostname(url, html):
 	"""
 	if (html == None):
 		return set()
-	url = urlparse.urlparse(url)
+	url = urlparse(url)
 	links = url_regex.findall(html)
 	link_set = set()
 	for link in links:
@@ -180,7 +180,7 @@ def find_links_in_html_with_same_hostname(url, html):
 			elif link.startswith("#"):
 				continue
 			else:
-				link_set.add(urlparse.urljoin(url.geturl(),link))
+				link_set.add(urljoin(url.geturl(),link))
 		except Exception as e:
 			pass
 
