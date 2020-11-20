@@ -40,9 +40,9 @@ class CrawlerDb:
 # 			print 'Duplicated: %s' % url
 			return False
 
-		args = [{'url':unicode(url)}]
+		args = [{'url':str(url)}]
 		if (emails != None):
-			args = [{'url':unicode(url), 'has_crawled':True, 'emails':unicode(",".join(emails))}]
+			args = [{'url':str(url), 'has_crawled':True, 'emails':str(",".join(emails))}]
 		result = self.connection.execute(self.website_table.insert(), args)
 		if result:
 			return True
