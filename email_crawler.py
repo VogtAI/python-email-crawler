@@ -1,9 +1,15 @@
 from settings import LOGGING
 import logging, logging.config
-import urllib, urllib2
+import urllib
 import re, urlparse
 import traceback
 from database import CrawlerDb
+
+
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
 
 # Debugging
 # import pdb;pdb.set_trace()
