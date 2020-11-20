@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, Table, Column, Integer, Unicode, Boolean, MetaData, select
-import urlparse
+from urllib.parse import urlparse
 
 DATABASE_NAME = 'data/crawler.sqlite'
 HTML_DIR = 'data/html/'
